@@ -1,0 +1,130 @@
+diff --git a/modules/dnn_objdetect/tutorials/dnn_objdetect_tutorial.markdown b/modules/dnn_objdetect/tutorials/dnn_objdetect_tutorial.markdown
+index ea684fa4..d03f1134 100644
+--- a/modules/dnn_objdetect/tutorials/dnn_objdetect_tutorial.markdown
++++ b/modules/dnn_objdetect/tutorials/dnn_objdetect_tutorial.markdown
+@@ -112,7 +112,7 @@ Time taken: 0.137722
+ Probability: 77.1757
+ ```
+ 
+-Looking at [synset_words.txt](https://raw.githubusercontent.com/opencv/opencv/3.4.0/samples/data/dnn/synset_words.txt), the predicted class belongs to `airliner`
++Looking at [synset_words.txt](https://hk.gh-proxy.com/raw.githubusercontent.com/opencv/opencv/3.4.0/samples/data/dnn/synset_words.txt), the predicted class belongs to `airliner`
+ 
+ 
+ ```bash
+diff --git a/modules/face/CMakeLists.txt b/modules/face/CMakeLists.txt
+index 4616515f..324eb5ed 100644
+--- a/modules/face/CMakeLists.txt
++++ b/modules/face/CMakeLists.txt
+@@ -16,7 +16,7 @@ ocv_download(
+     URL
+       "${OPENCV_FACE_ALIGNMENT_URL}"
+       "$ENV{OPENCV_FACE_ALIGNMENT_URL}"
+-      "https://raw.githubusercontent.com/opencv/opencv_3rdparty/${__commit_hash}/"
++      "https://hk.gh-proxy.com/raw.githubusercontent.com/opencv/opencv_3rdparty/${__commit_hash}/"
+     DESTINATION_DIR "${CMAKE_BINARY_DIR}/${OPENCV_TEST_DATA_INSTALL_PATH}/cv/face/"
+     ID "data"
+     RELATIVE_URL
+diff --git a/modules/face/samples/landmarks_demo.py b/modules/face/samples/landmarks_demo.py
+index 84893a77..ff52b8e7 100644
+--- a/modules/face/samples/landmarks_demo.py
++++ b/modules/face/samples/landmarks_demo.py
+@@ -12,7 +12,7 @@ try:
+     facemark.loadModel(cv.samples.findFile('lbfmodel.yaml'))
+ except cv.error:
+     print("Model not found\nlbfmodel.yaml can be download at")
+-    print("https://raw.githubusercontent.com/kurnianggoro/GSOC2017/master/data/lbfmodel.yaml")
++    print("https://hk.gh-proxy.com/raw.githubusercontent.com/kurnianggoro/GSOC2017/master/data/lbfmodel.yaml")
+ cascade = cv.CascadeClassifier(cv.samples.findFile('lbpcascade_frontalface_improved.xml'))
+ if cascade.empty() :
+     print("cascade not found")
+diff --git a/modules/face/tutorials/facemark_usage/facemark_usage.markdown b/modules/face/tutorials/facemark_usage/facemark_usage.markdown
+index dc320fb9..e4bec74f 100644
+--- a/modules/face/tutorials/facemark_usage/facemark_usage.markdown
++++ b/modules/face/tutorials/facemark_usage/facemark_usage.markdown
+@@ -150,7 +150,7 @@ facemark->training();
+ 
+ Use the trained model to detect the facial landmarks from a given image.
+ -----
+-- First of all, load the trained model. You can also download the pre-trained model in this link <https://raw.githubusercontent.com/kurnianggoro/GSOC2017/master/data/lbfmodel.yaml>
++- First of all, load the trained model. You can also download the pre-trained model in this link <https://hk.gh-proxy.com/raw.githubusercontent.com/kurnianggoro/GSOC2017/master/data/lbfmodel.yaml>
+     @code
+     facemark->loadModel(params.model_filename);
+     @endcode
+diff --git a/modules/julia/samples/chessboard_corners.jl b/modules/julia/samples/chessboard_corners.jl
+index cc9a1e7b..c080d7d6 100644
+--- a/modules/julia/samples/chessboard_corners.jl
++++ b/modules/julia/samples/chessboard_corners.jl
+@@ -3,7 +3,7 @@ using OpenCV
+ const cv = OpenCV
+ 
+ 
+-# chess1.png is at https://raw.githubusercontent.com/opencv/opencv_extra/master/testdata/cv/cameracalibration/chess1.png
++# chess1.png is at https://hk.gh-proxy.com/raw.githubusercontent.com/opencv/opencv_extra/master/testdata/cv/cameracalibration/chess1.png
+ img = cv.imread("chess1.png",cv.IMREAD_GRAYSCALE)
+ climg = cv.cvtColor(img, cv.COLOR_GRAY2BGR)
+ 
+diff --git a/modules/wechat_qrcode/CMakeLists.txt b/modules/wechat_qrcode/CMakeLists.txt
+index a15c4337..4e000ca0 100644
+--- a/modules/wechat_qrcode/CMakeLists.txt
++++ b/modules/wechat_qrcode/CMakeLists.txt
+@@ -28,7 +28,7 @@ foreach(model_name ${model_names})
+                         URL
+                         "${OPENCV_WECHAT_QRCODE_URL}"
+                         "$ENV{OPENCV_WECHAT_QRCODE_URL}"
+-                        "https://raw.githubusercontent.com/WeChatCV/opencv_3rdparty/${wechat_qrcode_commit_hash}/"
++                        "https://hk.gh-proxy.com/raw.githubusercontent.com/WeChatCV/opencv_3rdparty/${wechat_qrcode_commit_hash}/"
+                         DESTINATION_DIR "${CMAKE_BINARY_DIR}/downloads/wechat_qrcode"
+                         ID "wechat_qrcode"
+                         RELATIVE_URL
+diff --git a/modules/xfeatures2d/cmake/download_boostdesc.cmake b/modules/xfeatures2d/cmake/download_boostdesc.cmake
+index 87bedf98..8d0e71d9 100644
+--- a/modules/xfeatures2d/cmake/download_boostdesc.cmake
++++ b/modules/xfeatures2d/cmake/download_boostdesc.cmake
+@@ -24,7 +24,7 @@ function(download_boost_descriptors dst_dir status_var)
+                  URL
+                    "${OPENCV_BOOSTDESC_URL}"
+                    "$ENV{OPENCV_BOOSTDESC_URL}"
+-                   "https://raw.githubusercontent.com/opencv/opencv_3rdparty/${OPENCV_3RDPARTY_COMMIT}/"
++                   "https://hk.gh-proxy.com/raw.githubusercontent.com/opencv/opencv_3rdparty/${OPENCV_3RDPARTY_COMMIT}/"
+                  DESTINATION_DIR ${dst_dir}
+                  ID "xfeatures2d/boostdesc"
+                  RELATIVE_URL
+diff --git a/modules/xfeatures2d/cmake/download_vgg.cmake b/modules/xfeatures2d/cmake/download_vgg.cmake
+index 67e1f8f0..fc3e5f38 100644
+--- a/modules/xfeatures2d/cmake/download_vgg.cmake
++++ b/modules/xfeatures2d/cmake/download_vgg.cmake
+@@ -18,7 +18,7 @@ function(download_vgg_descriptors dst_dir status_var)
+                  URL
+                    "${OPENCV_VGGDESC_URL}"
+                    "$ENV{OPENCV_VGGDESC_URL}"
+-                   "https://raw.githubusercontent.com/opencv/opencv_3rdparty/${OPENCV_3RDPARTY_COMMIT}/"
++                   "https://hk.gh-proxy.com/raw.githubusercontent.com/opencv/opencv_3rdparty/${OPENCV_3RDPARTY_COMMIT}/"
+                  DESTINATION_DIR "${dst_dir}"
+                  ID "xfeatures2d/vgg"
+                  RELATIVE_URL
+diff --git a/modules/xfeatures2d/doc/xfeatures2d.bib b/modules/xfeatures2d/doc/xfeatures2d.bib
+index 7d3f146c..888060a9 100644
+--- a/modules/xfeatures2d/doc/xfeatures2d.bib
++++ b/modules/xfeatures2d/doc/xfeatures2d.bib
+@@ -150,7 +150,7 @@
+   year = {2020},
+   issn = {0167-8655},
+   doi = {https://doi.org/10.1016/j.patrec.2020.04.005},
+-  url = {https://raw.githubusercontent.com/iago-suarez/BEBLID/master/BEBLID_Boosted_Efficient_Binary_Local_Image_Descriptor.pdf},
++  url = {https://hk.gh-proxy.com/raw.githubusercontent.com/iago-suarez/BEBLID/master/BEBLID_Boosted_Efficient_Binary_Local_Image_Descriptor.pdf},
+   author = {Iago Su\'arez and Ghesn Sfeir and Jos\'e M. Buenaposada and Luis Baumela},
+ }
+ 
+diff --git a/modules/xfeatures2d/include/opencv2/xfeatures2d.hpp b/modules/xfeatures2d/include/opencv2/xfeatures2d.hpp
+index 44f1af92..2364f28b 100644
+--- a/modules/xfeatures2d/include/opencv2/xfeatures2d.hpp
++++ b/modules/xfeatures2d/include/opencv2/xfeatures2d.hpp
+@@ -257,7 +257,7 @@ Pattern Recognition Letters, 133:366–372, 2020. </BLOCKQUOTE>
+ The descriptor was trained using 1 million of randomly sampled pairs of patches
+ (20% positives and 80% negatives) from the Liberty split of the UBC datasets
+ \cite winder2007learning as described in the paper @cite Suarez2020BEBLID.
+-You can check in the [AKAZE example](https://raw.githubusercontent.com/opencv/opencv/master/samples/cpp/tutorial_code/features2D/AKAZE_match.cpp)
++You can check in the [AKAZE example](https://hk.gh-proxy.com/raw.githubusercontent.com/opencv/opencv/master/samples/cpp/tutorial_code/features2D/AKAZE_match.cpp)
+ how well BEBLID works. Detecting 10000 keypoints with ORB and describing with BEBLID obtains
+ 561 inliers (75%) whereas describing with ORB obtains only 493 inliers (63%).
+ */

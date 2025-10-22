@@ -1,0 +1,61 @@
+diff --git a/cmake/OpenCVDetectCUDAUtils.cmake b/cmake/OpenCVDetectCUDAUtils.cmake
+index fdd65ef6c3..bf69644e57 100644
+--- a/cmake/OpenCVDetectCUDAUtils.cmake
++++ b/cmake/OpenCVDetectCUDAUtils.cmake
+@@ -410,7 +410,7 @@ macro(ocv_nvcc_flags)
+ endmacro()
+ 
+ macro(ocv_apply_cuda_stub_workaround cuda_driver_library_path)
+-  # details: https://github.com/NVIDIA/nvidia-docker/issues/775
++  # details: https://hk.gh-proxy.com/github.com/NVIDIA/nvidia-docker/issues/775
+   if(" ${cuda_driver_library_path}" MATCHES "/stubs/libcuda.so" AND NOT OPENCV_SKIP_CUDA_STUB_WORKAROUND)
+     set(CUDA_STUB_ENABLED_LINK_WORKAROUND 1)
+     if(EXISTS "${cuda_driver_library_path}" AND NOT OPENCV_SKIP_CUDA_STUB_WORKAROUND_RPATH_LINK)
+diff --git a/modules/dnn/include/opencv2/dnn/dnn.hpp b/modules/dnn/include/opencv2/dnn/dnn.hpp
+index fbe5044fef..7e349c9679 100644
+--- a/modules/dnn/include/opencv2/dnn/dnn.hpp
++++ b/modules/dnn/include/opencv2/dnn/dnn.hpp
+@@ -1294,7 +1294,7 @@ CV__DNN_INLINE_NS_BEGIN
+      *
+      * @note Shrinked model has no origin float32 weights so it can't be used
+      *       in origin Caffe framework anymore. However the structure of data
+-     *       is taken from NVidia's Caffe fork: https://github.com/NVIDIA/caffe.
++     *       is taken from NVidia's Caffe fork: https://hk.gh-proxy.com/github.com/NVIDIA/caffe.
+      *       So the resulting model may be used there.
+      */
+     CV_EXPORTS_W void shrinkCaffeModel(CV_WRAP_FILE_PATH const String& src, CV_WRAP_FILE_PATH const String& dst,
+diff --git a/modules/dnn/src/caffe/opencv-caffe.proto b/modules/dnn/src/caffe/opencv-caffe.proto
+index d540591f82..88b8fb3a93 100644
+--- a/modules/dnn/src/caffe/opencv-caffe.proto
++++ b/modules/dnn/src/caffe/opencv-caffe.proto
+@@ -50,7 +50,7 @@ syntax = "proto2";
+ 
+ package opencv_caffe;
+ 
+-// NVIDIA's Caffe feature is used to store fp16 weights, https://github.com/NVIDIA/caffe:
++// NVIDIA's Caffe feature is used to store fp16 weights, https://hk.gh-proxy.com/github.com/NVIDIA/caffe:
+ // Math and storage types
+ enum Type {
+   DOUBLE = 0;
+@@ -674,7 +674,7 @@ message BatchNormParameter {
+   // Small value to add to the variance estimate so that we don't divide by
+   // zero.
+   optional float eps = 3 [default = 1e-5];
+-  // It true, scale and add biases. Source: https://github.com/NVIDIA/caffe/
++  // It true, scale and add biases. Source: https://hk.gh-proxy.com/github.com/NVIDIA/caffe/
+   optional bool scale_bias = 7 [default = false];
+ }
+ 
+diff --git a/samples/dnn/speech_recognition.py b/samples/dnn/speech_recognition.py
+index da2ce11521..49f57d073d 100644
+--- a/samples/dnn/speech_recognition.py
++++ b/samples/dnn/speech_recognition.py
+@@ -61,7 +61,7 @@ import os
+             onnx.save_model(model,f)
+         ```
+ 
+-    Original Repo : https://github.com/NVIDIA/DeepLearningExamples/tree/master/PyTorch/SpeechRecognition/Jasper
++    Original Repo : https://hk.gh-proxy.com/github.com/NVIDIA/DeepLearningExamples/tree/master/PyTorch/SpeechRecognition/Jasper
+  '''
+ 
+ class FilterbankFeatures:
